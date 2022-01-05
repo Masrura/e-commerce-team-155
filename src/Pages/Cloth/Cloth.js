@@ -1,18 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cloth = ({wear}) => {
-    const {name,image} = wear;
+    const {name,image,id} = wear;
     return (
         
-        <div class="col-lg-3 col-md-6">
-          <div class="card rounded" >
-            <img class="card-img-top" src={image} alt="Card image cap"/>
-            <div class="card-body">
-              <h5 class="card-title">{name}</h5>
+      <div className="col-lg-3 col-md-6">
+        <Link to={`/product/${id}`}>
+          <div className="card rounded" >
+            <img className="card-img-top" src={image} alt="Card image cap"/>
+            <div className="card-body">
+              <h5 className="card-title">{name}</h5>
               <p>price:280Tk</p>
-              <a href="#" class="btn btn-danger">Ordar Now</a>
+              <a href="#" className="btn btn-danger">Ordar Now</a>
             </div>
           </div>
+        </Link>
         </div>
     );
 };
