@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 .App {
   text-align: center;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+.App {
+  text-align: center;
+  font-family: Bebas Neue;
+>>>>>>> cc0ae25f90051f1569fffa765f22a3633fafe53f
 }
 
 .App-logo {
