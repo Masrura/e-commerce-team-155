@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
-import Navigation from "./../Shared/Navigation/Navigation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faGoogle } from "@fortawesome/free-brands-svg-icons";
-import './SignIn.css'
+import './../SignIn.css'
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import { NavLink,useLocation,useNavigate } from 'react-router-dom';
-import useAuth from '../../hook/useAuth';
-const SignIn = () => {
-      const [loginData,setLoginData] = useState({});
-      const {user,logInUser,isLoading,authError,siginWithGoogle} = useAuth();
-      const location = useLocation();
-      const navigate = useNavigate();
+import Navigation from '../../Shared/Navigation/Navigation';
+import useAuth from "./../../../hook/useAuth";
+const Register = () => {
+    const [loginData,setLoginData] = useState({});
+    const {authError,user,registerUser,isLoading,siginWithGoogle} = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     const handleLoginOnSubmit = (e) => {
-      logInUser(loginData.email,loginData.password,location,navigate)
+      if(loginData.password !== loginData.password2){
+          
+          return;
+      }
+      registerUser(loginData.email,loginData.password,location,navigate)
       e.preventDefault()
     };
     const handleOnChnage = (e) => {
@@ -24,42 +29,50 @@ const SignIn = () => {
         setLoginData(newLoginData);
       };
 
-
     return (
         <>
         <Navigation></Navigation>
 
-        <Container sx={{mt : 10}}>
-            <Grid container spaci={2} className='bx-shadw'>
+        <Container sx={{m : 10}} className='bx-shadw'>
+            <Grid container spaci={2}>
               <Grid item xs={12} md={6}>
-                <Typography sx={{m : 1}} variant='h4'>Login</Typography>
+                <Typography sx={{m : 4}} variant='h4'>Register</Typography>
                 
-                <form  onSubmit={handleLoginOnSubmit}>
+                {!isLoading && <form onSubmit={handleLoginOnSubmit}>
                   <TextField 
-                      id="filled-basic" 
-                      sx={{m : 2}}
+                      id="filled-basic"
+                      sx={{m : 4}} 
                       label="Your Email" 
                       name='email'
+                      type='email'
                       onChange={handleOnChnage}
                       variant="filled" /><br/>
                   <TextField 
                       id="filled-basic" 
-                      sx={{m : 2}}
+                      sx={{m : 4}}
                       label="Your Password" 
                       name='password'
                       onChange={handleOnChnage}
                       type='password'
                       variant="filled" /><br/>
-                  <Button variant='contained' sx={{m : 4}} type='submit'>Login</Button><br/>
-                  <NavLink to='/register'><a variant='contained' type='submit'>New user? register</a></NavLink>
-                
-                </form>
+                  <TextField 
+                      id="filled-basic"
+                      sx={{m : 4}} 
+                      label="Retype Password" 
+                      name='password2'
+                      onChange={handleOnChnage}
+                      type='password2'
+                      variant="filled" /><br/>
+                  <Button variant='contained' sx={{m : 4}} type='submit'>Login</Button> <br/>
+                  <NavLink to='/login'><a variant='contained' type='submit'>Already Registered ? Please Login.</a></NavLink>
+                </form>}
+               
               </Grid>
               <Grid item xs={12} md={6} className='singinbg'>
               <Typography variant="h4" sx={{m : 1}} gutterBottom component="div">
                   Or 
                 </Typography>
-                <Button onClick={siginWithGoogle} variant='contained' sx={{m : 4}} type='submit'><FontAwesomeIcon className='text-warning' icon={faGoogle}/>SIGN IN WITH GOOGLE</Button><br/>
+                <Button onClick={siginWithGoogle} variant='contained' sx={{m : 4}} type='submit'><FontAwesomeIcon className='text-warning me-1' icon={faGoogle}/> SIGN IN WITH GOOGLE</Button><br/>
                 {
                   isLoading && <CircularProgress />
                 }
@@ -89,4 +102,4 @@ const SignIn = () => {
     );
 };
 
-export default SignIn;
+export default Register;

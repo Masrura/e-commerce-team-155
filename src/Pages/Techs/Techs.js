@@ -12,7 +12,7 @@ const Techs = () => {
     return (
     <>
         <section class="container-fluid mt-5 bg-cont text-center bg-dark" id="tisharts">
-            <h1 class="text-light p-2">Cheack Out Tisharts</h1>
+            <h1 class="text-light p-2">Cheack Out Gedgets</h1>
             <hr/>
         <div class="row gy-5 p-5">
             {

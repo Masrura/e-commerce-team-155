@@ -5,9 +5,12 @@ import { faSignInAlt,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
+import useAuth from "./../../../hook/useAuth";
+import { Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
-  
+  const {user,logOut} = useAuth()
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
@@ -26,12 +29,18 @@ const Navigation = () => {
           <Nav.Link as={HashLink} to='/home'>HOME</Nav.Link>
           <Nav.Link as={HashLink} to='/wear'>WEAR</Nav.Link>
           <Nav.Link as={HashLink} to='/tech'>TECH</Nav.Link>
-          <Nav.Link as={HashLink} to='/gadgets'>GADGETS</Nav.Link>
           
         </Nav>
         <Nav>
-          <Link to="/Dashboard"><button className='btn btn-danger me-1'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></button></Link>
-          <Link to='/login'><button className='btn btn-danger me-1'>SIGN IN <FontAwesomeIcon icon={faSignInAlt} /></button></Link>
+          {
+                        user?.email ?
+                           <li> <Button style={{ textDecoration: 'none', color: 'white' }} onClick={logOut} color="inherit">Logout</Button>
+                           <Link to="/Dashboard"><button className='btn btn-danger me-1'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></button></Link></li>
+                            :
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
+                                <Button color="inherit">Login</Button>
+                            </NavLink>
+                    }
         </Nav>
       </Navbar.Collapse>
     </Navbar>
