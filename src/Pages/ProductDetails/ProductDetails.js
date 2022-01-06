@@ -12,7 +12,7 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (productId && productId !== "") {
-            fetch(`http://localhost:5000/shirt/${productId}`)
+            fetch(`https://damp-gorge-65015.herokuapp.com/shirt/${productId}`)
                 .then(res => res.json())
                 .then(data => {
                     dispatch(selectedProduct(data));

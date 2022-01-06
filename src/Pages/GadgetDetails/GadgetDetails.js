@@ -13,7 +13,7 @@ const GadgetDetails = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (gadgetId && gadgetId !== "") {
-            fetch(`http://localhost:5000/gadget/${gadgetId}`)
+            fetch(`https://damp-gorge-65015.herokuapp.com/gadget/${gadgetId}`)
                 .then(res => res.json())
                 .then(data => {
                     dispatch(selectedGadget(data));
