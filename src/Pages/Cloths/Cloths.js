@@ -6,7 +6,7 @@ import { setProducts } from "../../redux/actions/productsActions";
 
 
 const Cloths = () => {
-  const products = useSelector((state) => state.allProducts.products);
+  const wears = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,14 +30,14 @@ const Cloths = () => {
   //   fetchProducts();
   // }, []);
 
-  console.log("Products :", products);
+  console.log("Products :", wears);
     return (
         <>
-        <section className="container-fluid mt-5 bg-cont text-center bg-dark" id="tisharts">
-          <h1 className="text-light p-2">Cheack Out Tisharts</h1>
+        <section className="container-fluid mt-5 bg-cont" id="tisharts">
+               <h1 className="text-dark p-2 text-start">Popular Products</h1>
             <hr/>
-          <div className="row gy-5 p-5">
-            {products.map(product => <Cloth key={product.id} wear={product}></Cloth>)}           
+            <div className="row gy-5 p-5">
+                {wears.map(wear=><Cloth key={wear.id} wear={wear}></Cloth>)}           
             </div>
         </section>
         </>

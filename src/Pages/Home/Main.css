@@ -12,7 +12,48 @@
     background-image: url(./../../images/banner-11.png);
     background-position: center;
     background-size: cover;
-    padding: 152px;
+    padding: 145px;
     background-repeat: no-repeat;
     
+}
+
+
+
+.mini1{
+    background-image: url(./../../images/banner-1.png);
+    background-position: center;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+}
+
+.mini2{
+    background-image: url(./../../images/banner-2.png);
+    background-position: center;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+}
+
+.mini3{
+    background-image: url(./../../images/banner-3.png);
+    background-position: center;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+}
+
+
+.w-45{
+    width: 450px;
+}
+
+
+
+.align-ele{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    padding: 20px;
 }
