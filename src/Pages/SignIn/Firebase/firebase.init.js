@@ -7,6 +7,4 @@ const initialFirebase = () => {
     initializeApp(firebaseConfig)
 }
 
-
-
 export default initialFirebase
