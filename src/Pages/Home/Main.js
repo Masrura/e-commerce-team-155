@@ -1,23 +1,36 @@
 import React from 'react';
-import mainbg from "./../../images/header.jpg";
+import { Button, Grid } from '@mui/material';
 
+import './Main.css'
+import { textAlign } from '@mui/system';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Main = () => {
     const maintext = {
-        letterSpacing: "15px"
-        
+        letterSpacing: "15px",
     }
+    
     return (
-        <section className="container">
-        <div className="row">
-            <div className="col-lg-6 align-self-center">
-                <h1 className="display-1 let-spac" style={maintext}><span className="text-danger">ready</span> to <span className="text-danger">wear</span></h1>
-                <p className="border-danger border-bottom w-25">shop now</p>
+        <section className="container-fluid mt-5" >
+            <div className="row">
+                <Grid className="col-lg-8 mainbg " sx={{boxShadow: 3 , borderRadius: 16 }}>
+                        <Grid>
+                            <h1 className="display-1 let-spac" style={maintext}><span className="text-danger">Pure</span> Coffe </h1>
+                            <h1 className="display-5 let-spac" style={maintext}><span className="text-danger">Big</span> Discount </h1>
+                            <Button variant="contained" color="success">Shop Now</Button>
+                        </Grid>
+                
+                </Grid>
+                <Grid className="col-lg-4 align-self-center banner12 " sx={{boxShadow: 3 , borderRadius: 16 }}>
+                        <Grid className='col-lg-6'>
+                            <h1 className="display-5 let-spac" style={maintext}><span className="text-danger">Delivered</span> to </h1>
+                            <h1 className="display-5 let-spac" style={maintext}><span className="text-danger">your</span> home </h1>
+                            <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                        </Grid>
+                
+                </Grid>
             </div>
-            <div className="col-lg-6">
-                <img src={mainbg} className="img-fluid"/>
-            </div>
-        </div>
-    </section>
+        </section>
     );
 };
 
