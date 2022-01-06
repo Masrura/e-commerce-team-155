@@ -9,7 +9,7 @@ const Inventory = () => {
         height: "200px"
     }
     useEffect(() => {
-        fetch('http://localhost:5000/inventory')
+        fetch('https://damp-gorge-65015.herokuapp.com/inventory')
         .then(res => res.json())
         .then(data =>setInventory(data))
     }, [control])
@@ -17,7 +17,7 @@ const Inventory = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://damp-gorge-65015.herokuapp.com/deleteProduct/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
