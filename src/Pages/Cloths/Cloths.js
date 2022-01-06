@@ -17,10 +17,10 @@ const Cloths = () => {
   },[])
     return (
         <>
-        <section class="container-fluid mt-5 bg-cont text-center bg-dark" id="tisharts">
-               <h1 class="text-light p-2">Cheack Out Tisharts</h1>
+        <section className="container-fluid mt-5 bg-cont" id="tisharts">
+               <h1 className="text-dark p-2 text-start">Popular Products</h1>
             <hr/>
-            <div class="row gy-5 p-5">
+            <div className="row gy-5 p-5">
                 {wears.map(wear=><Cloth key={wear.id} wear={wear}></Cloth>)}           
             </div>
         </section>

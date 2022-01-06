@@ -2,8 +2,8 @@ import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Tech = ({tech}) => {
-  const {name,price,image} = tech;
+const Food = ({food}) => {
+  const {name,price,image} = food;
   const myStyle = {
     height : "200px"
   }
@@ -24,4 +24,4 @@ const Tech = ({tech}) => {
     );
 };
 
-export default Tech;
+export default Food;
