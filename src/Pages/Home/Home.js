@@ -4,7 +4,10 @@ import Techs from '../Techs/Techs';
 import Main from './Main'
 import Navigation from "./../Shared/Navigation/Navigation";
 import Foods from '../FoodsRoute/Foods';
+import useAuth from '../../hook/useAuth';
 const Home = () => {
+    const { admin } = useAuth();
+    console.log('Admin is ', admin);
     return (
         <div>
             <Navigation></Navigation>

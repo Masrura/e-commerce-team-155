@@ -11,7 +11,7 @@ const Food = ({food}) => {
      
         <div class="col-lg-2 col-md-6">
           <div class="card rounded" >
-            <img class="card-img-top" style={myStyle} src={image} alt="Card image cap"/>
+            <img class="card-img-top" style={myStyle} src={image} alt="Card_image_cap"/>
             <div class="card-body">
               <h5 class="card-title">{name}</h5>
               <p>price:{price}</p>
