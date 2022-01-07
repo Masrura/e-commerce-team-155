@@ -1,83 +1,140 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import { Button, CssBaseline, Divider, Drawer, Toolbar } from '@mui/material';
-import { Link } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MailIcon from '@mui/icons-material/Mail';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import {
+    Outlet,
+    Link
+} from "react-router-dom";
+import { Button } from '@mui/material';
 import useAuth from '../../../hook/useAuth';
-const Dashboard = (props) => {
+import { Nav } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseUser, faIndustry, faStepForward, faUserAltSlash } from '@fortawesome/free-solid-svg-icons';
+import DashboardHome from './DashboardHome';
 
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+const drawerWidth = 200;
+
+function Dashboard(props) {
     const { window } = props;
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
     const { admin } = useAuth();
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
 
-    const container = window !== undefined ? () => window().document.body : undefined;
-    const drawerWidth = 200;
     const drawer = (
-        <div style={{ background: '#333', height: '100vh' }}>
+        <div>
             <Toolbar />
             <Divider />
-            {
-                admin ?
-
-                    <Box>
-                        <Link to={`/makeadmin`}> <Button style={{ color: '#b7c0cd', paddingTop: '40px' }}>Make Admin</Button></Link><br />
-                        <Link to={`/addProduct`}><Button style={{ color: '#b7c0cd', padding: '40px' }}>Add Product To Inventory</Button></Link><br />
-                        <Link to={`/inventory`}><Button style={{ color: '#b7c0cd', padding: '40px' }}>Inventory</Button></Link><br />
-                    </Box>
-                    :
-                    <Box>
-                        <Link to={`/payment`}><Button style={{ color: '#b7c0cd', padding: '40px' }}>Payment</Button></Link><br />
-                        <Link to={`/myordars`}><Button style={{ color: '#b7c0cd', padding: '40px' }}>My Orders</Button></Link><br />
-                        <Link to={`/review`}><Button style={{ color: '#b7c0cd', padding: '40px' }}>Review</Button></Link><br />
-                    </Box>
-            }
-            <Button style={{ color: '#b7c0cd', padding: '40px' }}>Logout</Button>
-            <Link to="/home"><Button style={{ color: '#b7c0cd', padding: '40px' }}>Home</Button></Link>
-
+          
+            {admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{backgroundColor : "#7258db", height : "90vh"}}>
+                <Link to={`/dashboard/dashboardhome`}><a className='text-light'><FontAwesomeIcon icon={faHouseUser}/> Dashboard Home</a></Link><br/>
+                <Link to={`/dashboard/makeAdmin`}><a className='text-light'><FontAwesomeIcon icon={faUserAltSlash}/> Make Admin</a></Link><br/>
+                <Link to={`/dashboard/inventory`}><a className='text-light'><FontAwesomeIcon icon={faIndustry}/> Inventory</a></Link><br/>
+                <Link to={`/dashboard/addproduct`}><a className='text-light'><FontAwesomeIcon icon={faStepForward}/> Add a product</a></Link><br/>
+                <Link to={`/home`}><a className='text-light'><FontAwesomeIcon icon={faStepForward}/> Home</a></Link><br/>
+            </Box>}
+           
         </div>
     );
-    return (
-        <Container>
-            <Box sx={{ display: 'flex', }}>
-                <CssBaseline />
 
-                <Box
-                    component="nav"
-                    sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-                    aria-label="mailbox folders"
+    const container = window !== undefined ? () => window().document.body : undefined;
+
+    return (
+        <Box sx={{ display: 'flex' }}>
+            <CssBaseline />
+            <AppBar
+                position="fixed"
+                sx={{
+                    width: { sm: `calc(100% - ${drawerWidth}px)` },
+                    ml: { sm: `${drawerWidth}px` },
+                }}
+            >
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" noWrap component="div">
+                        Dashboard
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Box
+                component="nav"
+                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                aria-label="mailbox folders"
+            >
+                <Drawer
+                    container={container}
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                    }}
+                    sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    }}
                 >
-                    <Drawer
-                        container={container}
-                        variant="temporary"
-                        open={mobileOpen}
-                        onClose={handleDrawerToggle}
-                        ModalProps={{
-                            keepMounted: true, // Better open performance on mobile.
-                        }}
-                        sx={{
-                            display: { xs: 'block', sm: 'none' },
-                            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                        }}
-                    >
-                        {drawer}
-                    </Drawer>
-                    <Drawer
-                        variant="permanent"
-                        sx={{
-                            display: { xs: 'none', sm: 'block' },
-                            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                        }}
-                        open
-                    >
-                        {drawer}
-                    </Drawer>
-                </Box>
+                    {drawer}
+                </Drawer>
+
+                <Drawer
+                    variant="permanent"
+                    sx={{
+                        display: { xs: 'none', sm: 'block' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    }}
+                    open
+                >
+                    {drawer}
+                </Drawer>
+
+
+
+
             </Box>
-        </Container>
+            <Box
+                component="main"
+                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+            >
+                <Toolbar />
+
+                <Outlet></Outlet>
+
+            </Box>
+        </Box>
     );
+}
+
+Dashboard.propTypes = {
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
 };
 
 export default Dashboard;

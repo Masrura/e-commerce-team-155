@@ -39,7 +39,7 @@ const Main = () => {
             </div>
 
                 <Row className='d-flex justify-content-center'>
-                    <Grid className='col-lg-4 mini1 p-5 m-2 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
+                    <Grid className='col-lg-4 mini1 p-5 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
                         <Col className='align-ele'>
                         <h3>Everyday Fresh &
                             Clean with Our
@@ -48,7 +48,7 @@ const Main = () => {
                         </Col>
 
                     </Grid>
-                    <Grid className='col-lg-4 mini2 p-5 m-2 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
+                    <Grid className='col-lg-4 mini2 p-5 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
                         <Col className='align-ele'>
 
                         <h3>Make your BreakfastHealthy and Easy</h3>
@@ -57,7 +57,7 @@ const Main = () => {
 
 
                     </Grid>
-                    <Grid className='col-lg-4 mini3 p-5 m-2 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
+                    <Grid className='col-lg-4 mini3 p-5 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
                         <Col className='align-ele'>
 
                         <h3>The best OrganicProducts Online</h3>

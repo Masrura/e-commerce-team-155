@@ -70,7 +70,8 @@ const ProductDetails = () => {
                     <h1 className='customFont mt-5'>PRICE : {price}Tk.</h1>
                     <p className='text-muted mt-5'>{description}</p>
                     <button type="button" onClick={() => updateCart(product)} className="btn btn-outline-success mt-5"><span className='me-2'>Add To Cart</span> <FontAwesomeIcon icon={faShoppingBag} /> </button> 
-                    <p className='h5 mt-5'>Cetagory : {category} <span><FontAwesomeIcon icon={faHeart}/></span></p>
+                    <button type="button" className="btn btn-outline-success mt-5"><span className='me-2'>Add To Wishlist </span> <FontAwesomeIcon icon={faHeart} /> </button> 
+                    <p className='m-2'>Cetagory : {category}</p>
                </Col>
                <Col className='col-lg-4 border'>
                     <img src={image} className="img-fluid"/>

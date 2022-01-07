@@ -28,18 +28,25 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div>
+        <div className='text-start'>
             <h2>Make an Admin</h2>
-            <form onSubmit={handleAdminSubmit}>
+            <form onSubmit={handleAdminSubmit} className='border shadow-lg p-5 m-5 w-50'>
                 <TextField
                     sx={{ width: '50%' }}
                     label="Email"
                     type="email"
                     onBlur={handleOnBlur}
-                    variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                    variant="standard" /><br/>
+                <Button className='mt-5' type="submit" variant="contained">Make Admin</Button>
             </form>
             {success && <Alert severity="success">Made Admin successfully!</Alert>}
+            <h1>Current Admins</h1>
+            <div className="card" style={{width: "18rem"}}>
+                <img className="card-img-top" src="https://pixinvent.com/materialize-material-design-admin-template/app-assets/images/avatar/avatar-7.png" alt="Card image cap"/>
+                <div className="card-body">
+                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                </div>
         </div>
     );
 };

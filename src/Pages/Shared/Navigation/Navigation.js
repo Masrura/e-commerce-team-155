@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import useAuth from "./../../../hook/useAuth";
 import { Button, TextField } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import './Navigation.css'
 
 const Navigation = () => {
   const {user,logOut} = useAuth()
@@ -57,8 +58,15 @@ const Navigation = () => {
 
 
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-    <Button variant="contained" color="success"> <FontAwesomeIcon icon={faQrcode}/><span className='ms-2'>Browse All Categories</span></Button>
       
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown <FontAwesomeIcon icon={faQrcode}/></button>
+        <div class="dropdown-content">
+          <NavLink to='/wear'><p>Wear</p></NavLink>
+          <NavLink to='/tech'><p>Tech</p></NavLink>
+          <NavLink to='/food'><p>Food</p></NavLink>
+        </div>
+    </div>
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -67,7 +75,8 @@ const Navigation = () => {
           <Nav.Link as={HashLink} className='me-5' to='/home'>HOME</Nav.Link>
           <Nav.Link as={HashLink} className='me-5' to='/wear'>WEAR</Nav.Link>
           <Nav.Link as={HashLink} className='me-5' to='/tech'>TECH</Nav.Link>
-          <Nav.Link as={HashLink} className='me-5' to='/about'>ABOUT</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5' to='/food'>FOOD</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5' to='/contectus'>Contect Us</Nav.Link>
           
         </Nav>
         <Nav>
