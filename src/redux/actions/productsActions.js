@@ -12,7 +12,12 @@ export const setGadgets = (gadgets) => {
         payload: gadgets,
     };
 };
-
+export const setCart = (cart) => {
+    return {
+        type: ActionTypes.SET_CART,
+        payload: cart,
+    };
+};
 export const selectedProduct = (product) => {
     return {
         type: ActionTypes.SELECTED_PRODUCT,

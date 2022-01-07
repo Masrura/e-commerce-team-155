@@ -4,7 +4,7 @@ import { Container, Rating } from '@mui/material';
 import { Col, Row } from 'react-bootstrap';
 import Navigation from '../Shared/Navigation/Navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBag,faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag, faHeart } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../hook/useAuth';
 import {
     selectedProduct,
@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 const ProductDetails = () => {
+    const { user } = useAuth();
     const { productId } = useParams();
     let product = useSelector((state) => state.product);
     const dispatch = useDispatch();
@@ -30,55 +31,78 @@ const ProductDetails = () => {
             dispatch(removeSelectedProduct());
         };
 
-        }, [productId])
+    }, [productId])
 
-        const {image,name,description,price,category} = product;
+    const { image, name, description, price, category } = product;
 
 
-        const updateCart = (e) => {
-            // e.preventDefault();
-            // const name = nameRef.current.value;
-            // const price = priceRef.current.value;
-            // const description = descriptionRef.current.value;
-            // const image = urlRef.current.value;
-            // const newJewelrie = { name,price,description,image };
-    
-            // fetch('https://quiet-island-22071.herokuapp.com/jewelries',{
-            //     method: 'POST',
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body : JSON.stringify(newJewelrie)
-            // })
-            // .then(res => res.json())
-            //     .then(data => {
-            //        console.log(data)
-            //     })
-            
-        }
-      
+    const updateCart = (e) => {
+        product.email = user.email;
+        fetch("http://localhost:5000/cart", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(product),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.insertedId) {
+                    alert('Added To Cart');
+                 
+                }
+                else if (result.modifiedCount) {
+                    alert('One more product added');
+                }
+                else
+                    alert('Something Went Wrong');
+            });
+
+        console.log(product);
+    }
+    const updateWishList = (e) => {
+        product.email = user.email;
+        fetch("http://localhost:5000/wishlist", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(product),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.insertedId) {
+                    alert('Added To Wishlist');
+                }
+                else if (result === 11000) {
+                    alert('Already Added');
+                }
+                else {
+                    alert('Something Went Wrong. Please try again');
+                }
+            });
+
+        console.log(product);
+    }
+
     return (
         <>
-       <Navigation></Navigation>
-       <Container className='mt-5'>
-           <Row>
-               <Col className='col-lg-4 border'>
-                    <img src={image} className="img-fluid"/>
-               </Col>
-               <Col className='col-lg-4 border text-start'>
-                    <h2 className='text-muted mt-5'> {name}                    </h2>
-                    <h1 className='customFont mt-5'>PRICE : {price}Tk.</h1>
-                    <p className='text-muted mt-5'>{description}</p>
-                    <button type="button" onClick={() => updateCart(product)} className="btn btn-outline-success mt-5"><span className='me-2'>Add To Cart</span> <FontAwesomeIcon icon={faShoppingBag} /> </button> 
-                    <button type="button" className="btn btn-outline-success mt-5"><span className='me-2'>Add To Wishlist </span> <FontAwesomeIcon icon={faHeart} /> </button> 
-                    <p className='m-2'>Cetagory : {category}</p>
-               </Col>
-               <Col className='col-lg-4 border'>
-                    <img src={image} className="img-fluid"/>
-               </Col>
-           </Row>
-       </Container>
-       </>
+            <Navigation></Navigation>
+            <Container className='mt-5'>
+                <Row>
+                    <Col className='col-lg-4 border'>
+                        <img src={image} className="img-fluid" alt="" />
+                    </Col>
+                    <Col className='col-lg-4 border text-start'>
+                        <h2 className='text-muted mt-5'> {name}                    </h2>
+                        <h1 className='customFont mt-5'>PRICE : {price}Tk.</h1>
+                        <p className='text-muted mt-5'>{description}</p>
+                        <button type="button" onClick={() => updateCart()} className="btn btn-outline-success mt-5"><span className='me-2'>Add To Cart</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
+                        <button type="button" onClick={() => updateWishList()} className="btn btn-outline-success mt-5"><span className='me-2'>Add to Wishlist</span> <FontAwesomeIcon icon={faHeart} /> </button>
+                       
+                    </Col>
+                    <Col className='col-lg-4 border'>
+                        <img src={image} className="img-fluid" alt="" />
+                    </Col>
+                </Row>
+            </Container>
+        </>
     );
 };
 

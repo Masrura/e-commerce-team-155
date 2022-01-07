@@ -2,6 +2,7 @@ import { ActionTypes } from "../constants/action-types";
 const intialState = {
     products: [],
     gadgets: [],
+    cart:[],
 };
 
 export const productsReducer = (state = intialState, { type, payload }) => {
@@ -17,6 +18,15 @@ export const gadgetsReducer = (state = intialState, { type, payload }) => {
     switch (type) {
         case ActionTypes.SET_GADGETS:
             return { ...state, gadgets: payload };
+        default:
+            return state;
+    }
+};
+
+export const cartReducer = (state = intialState, { type, payload }) => {
+    switch (type) {
+        case ActionTypes.SET_CART:
+            return { ...state, cart: payload };
         default:
             return state;
     }
