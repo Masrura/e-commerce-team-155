@@ -11,10 +11,10 @@ const Foods = () => {
     },[])
     return (
     <>
-        <section class="container-fluid mt-5 bg-cont text-center bg-light" id="tisharts">
-            <h1 class="text-dark text-start p-2">Frash and Healthy Food</h1>
+        <section className="container-fluid mt-5 bg-cont text-center bg-light" id="tisharts">
+            <h1 className="text-dark text-start p-2">Frash and Healthy Food</h1>
             <hr/>
-        <div class="row gy-5 p-5">
+        <div className="row gy-5 p-5">
             {
                 foods.map(food=><Food key={food.id} food={food}></Food>)
             }

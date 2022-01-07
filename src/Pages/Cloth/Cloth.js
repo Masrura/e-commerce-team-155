@@ -8,14 +8,14 @@ const Cloth = ({wear}) => {
     const {name,image,id} = wear;
     return (
         
-      <div class="col-lg-2 col-md-6">
+      <div className="col-lg-2 col-md-6">
         <Link to={`/product/${id}`}>
-          <div class="card rounded" >
-            <img class="card-img-top" src={image} alt="Card image cap"/>
-            <div class="card-body">
-              <h5 class="card-title">{name}</h5>
+          <div className="card rounded" >
+            <img className="card-img-top" src={image} alt="Card image cap"/>
+            <div className="card-body">
+              <h5 className="card-title">{name}</h5>
               <p>price:280Tk</p>
-              <button type="button" class="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
+              <button type="button" className="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
             </div>
           </div>
         </Link>

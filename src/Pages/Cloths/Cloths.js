@@ -30,7 +30,6 @@ const Cloths = () => {
   //   fetchProducts();
   // }, []);
 
-  console.log("Products :", wears);
     return (
         <>
         <section className="container-fluid mt-5 bg-cont" id="tisharts">

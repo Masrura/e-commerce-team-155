@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Pages/SignIn/Firebase/firebase.init";
 import { getAuth,GoogleAuthProvider , createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import { addToDb, getStoredCart } from "../utilities/localdb";
+
 
 // firebase initialize
 initializeFirebase()
@@ -9,8 +11,12 @@ const useFirebase = () => {
     const [user,setUser] = useState({});
     const [isLoading,setIsLoading] = useState(true)
     const [authError,setAuthError] = useState('');
-    const auth = getAuth(); 
+   
     
+   
+
+   
+    const auth = getAuth(); 
     const siginWithGoogle = ( ) => {
         const googleProvider = new GoogleAuthProvider()
         setIsLoading(true);
@@ -94,6 +100,11 @@ const useFirebase = () => {
             });
             return () => unsubscribed;
         },[])
+
+
+
+
+        
     return {
         user,
         registerUser,
@@ -101,7 +112,8 @@ const useFirebase = () => {
         logOut,
         logInUser,
         authError,
-        siginWithGoogle
+        siginWithGoogle,
+       
         
     }
 

@@ -9,13 +9,13 @@ const Food = ({food}) => {
   }
     return (
      
-        <div class="col-lg-2 col-md-6">
-          <div class="card rounded" >
-            <img class="card-img-top" style={myStyle} src={image} alt="Card image cap"/>
-            <div class="card-body">
-              <h5 class="card-title">{name}</h5>
+        <div className="col-lg-2 col-md-6">
+          <div className="card rounded" >
+            <img className="card-img-top" style={myStyle} src={image} alt="Card image cap"/>
+            <div className="card-body">
+              <h5 className="card-title">{name}</h5>
               <p>price:{price}</p>
-              <button type="button" class="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
+              <button type="button" className="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
 
             </div>
           </div>
