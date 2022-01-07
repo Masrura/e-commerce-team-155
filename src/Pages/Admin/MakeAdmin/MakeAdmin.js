@@ -1,10 +1,8 @@
 import { Alert, Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
-
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
-
     const handleOnBlur = e => {
         setEmail(e.target.value);
     }

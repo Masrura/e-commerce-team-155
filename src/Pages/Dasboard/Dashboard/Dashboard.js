@@ -42,7 +42,7 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
           
-            {admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{backgroundColor : "#7258db", height : "90vh"}}>
+            {admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{backgroundColor : "#7258db", height : "100vh"}}>
                 <Link to={`/dashboard/dashboardhome`}><a className='text-light'><FontAwesomeIcon icon={faHouseUser}/> Dashboard Home</a></Link><br/>
                 <Link to={`/dashboard/makeAdmin`}><a className='text-light'><FontAwesomeIcon icon={faUserAltSlash}/> Make Admin</a></Link><br/>
                 <Link to={`/dashboard/inventory`}><a className='text-light'><FontAwesomeIcon icon={faIndustry}/> Inventory</a></Link><br/>

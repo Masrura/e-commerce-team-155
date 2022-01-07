@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Grid } from '@mui/material';
-
+import { NavLink } from 'react-router-dom';
 import './Main.css'
 import { textAlign } from '@mui/system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -44,7 +44,9 @@ const Main = () => {
                         <h3>Everyday Fresh &
                             Clean with Our
                             Products</h3>
-                        <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                            <NavLink to='/food'>
+                                                        <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                            </NavLink>
                         </Col>
 
                     </Grid>
@@ -52,7 +54,9 @@ const Main = () => {
                         <Col className='align-ele'>
 
                         <h3>Make your BreakfastHealthy and Easy</h3>
-                            <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                            <NavLink to='/wear'>
+                                                            <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                            </NavLink>
                         </Col>
 
 
@@ -60,8 +64,10 @@ const Main = () => {
                     <Grid className='col-lg-4 mini3 p-5 w-45' sx={{boxShadow: 3 , borderRadius: 16 }}>
                         <Col className='align-ele'>
 
-                        <h3>The best OrganicProducts Online</h3>
-                            <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                        <h3>Take a look in out tech products</h3>
+                            <NavLink to='/tech'>
+                                                            <Button variant="contained" color="success">Shop now <FontAwesomeIcon icon={faArrowRight}/> </Button>
+                            </NavLink>
                         </Col>
 
 

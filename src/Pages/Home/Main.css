@@ -28,7 +28,7 @@
 }
 
 .mini2{
-    background-image: url(./../../images/banner-2.png);
+    background-image: url(./../../images/header.jpg);
     background-position: center;
     background-size: cover;
     
@@ -36,7 +36,7 @@
 }
 
 .mini3{
-    background-image: url(./../../images/banner-3.png);
+    background-image: url(./../../images/tech.jpg);
     background-position: center;
     background-size: cover;
     
@@ -45,7 +45,7 @@
 
 
 .w-45{
-    width: 450px;
+    width: 100px;
 }
 
 

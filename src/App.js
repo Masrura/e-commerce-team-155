@@ -18,6 +18,7 @@ import Cart from './Pages/Cart/Cart';
 import DashboardHome from "./Pages/Dasboard/Dashboard/DashboardHome";
 import ContectUs from './Pages/ContectUs/ContectUs';
 import FoodsRoute from './Pages/FoodsRoute/FoodsRoute'
+import Wishlist from './Pages/Wishlist/Wishlist';
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
             <Route path='/addProduct' element={<AddProduct />} />
             <Route path='/makeadmin' element={<MakeAdmin />} />
             <Route path='/inventory' element={<Inventory />} />
+            <Route path='/Wishlist' element={<Wishlist />} />
             <Route path='/contectus' element={<ContectUs/>} />
             <Route path="/product/:productId" element={<ProductDetails />} />
             <Route path="/gadget/:gadgetId" element={<GadgetDetails />} />

@@ -37,7 +37,7 @@ const Navigation = () => {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navbar-nav ms-auto mb-2 mb-lg-0">
           <Nav.Link as={HashLink} to='/cart'>Cart<FontAwesomeIcon icon={faShoppingCart}/></Nav.Link>
-          <Nav.Link as={HashLink} to='/wear'>Wishlist<FontAwesomeIcon icon={faHeart}/></Nav.Link>
+          <Nav.Link as={HashLink} to='/wishlist'>Wishlist<FontAwesomeIcon icon={faHeart}/></Nav.Link>
         </Nav>
         <Nav>
           {
