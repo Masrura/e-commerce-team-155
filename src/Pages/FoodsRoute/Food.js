@@ -15,8 +15,7 @@ const Food = ({food}) => {
             <div class="card-body">
               <h5 class="card-title">{name}</h5>
               <p>price:{price}</p>
-              <button type="button" class="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
-
+              <button type="button" className="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
             </div>
           </div>
         </div>

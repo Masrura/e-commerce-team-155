@@ -2,61 +2,73 @@
     {
         "id" : "1",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/zXYB7bc/504-Coffee.jpg"
+        "image"   : "https://i.ibb.co/zXYB7bc/504-Coffee.jpg",
+        "price"     : "100"
     },
     {
         "id" : "2",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/dMw80CT/509-Black.jpg"
+        "image"   : "https://i.ibb.co/dMw80CT/509-Black.jpg",
+        "price"     : "100"
     },
     {
         "id" : "3",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/r5hbRtf/510-Turkish.jpg"
+        "image"   : "https://i.ibb.co/r5hbRtf/510-Turkish.jpg",
+        "price"     : "100"
     },
     {
         "id" : "4",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/48KdzZS/511-Turkish.jpg"
+        "image"   : "https://i.ibb.co/48KdzZS/511-Turkish.jpg",
+        "price"     : "100"
     },
     {
         "id" : "5",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/4Z4kjqJ/513-Navy.jpg"
+        "image"   : "https://i.ibb.co/4Z4kjqJ/513-Navy.jpg",
+        "price"     : "100"
     },
     {
         "id" : "6",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/xqPqTkf/516-Coffee.jpg"
+        "image"   : "https://i.ibb.co/xqPqTkf/516-Coffee.jpg",
+        "price"     : "100"
     },
     {
         "id" : "7",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/TDf3mMy/517-Black.jpg"
+        "image"   : "https://i.ibb.co/TDf3mMy/517-Black.jpg",
+        "price"     : "100"
     },
     {
         "id" : "8",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/3N8W03Y/522-Turkish.jpg"
+        "image"   : "https://i.ibb.co/3N8W03Y/522-Turkish.jpg",
+        "price"     : "100"
     },
     {
         "id" : "9",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/YR0sqp1/523-Forest.jpg"
+        "image"   : "https://i.ibb.co/YR0sqp1/523-Forest.jpg",
+        "price"     : "100"
     },
     {
         "id" : "10",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/DDq9hQF/524-Forest.jpg"
+        "image"   : "https://i.ibb.co/DDq9hQF/524-Forest.jpg",
+        "price"     : "100"
     },
     {
         "id" : "11",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/Pmd5rVV/526-Forest.jpg"
+        "image"   : "https://i.ibb.co/Pmd5rVV/526-Forest.jpg",
+        "price"     : "100"
     },
     {
         "id" : "12",
         "name" : "T-shirt 509",
-        "image"   : "https://i.ibb.co/tQm2WsL/527-Navy.jpg"
+        "image"   : "https://i.ibb.co/tQm2WsL/527-Navy.jpg",
+        "price"     : "100"
     }
 ]

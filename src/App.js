@@ -14,6 +14,7 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AddProduct from './Pages/Admin/AddProduct/AddProduct';
 import MakeAdmin from './Pages/Admin/MakeAdmin/MakeAdmin';
 import Inventory from './Pages/Admin/Inventory/Inventory';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
             <Route path='/inventory' element={<Inventory />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
             <Route path="/gadget/:gadgetId" element={<GadgetDetails />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='*' element={<ErrorPage />} />
-            <Route path='*' element={<ErrorPage />} />
+            
             
             </Routes>
         </BrowserRouter>
