@@ -10,18 +10,9 @@ initializeFirebase()
 const useFirebase = () => {
     const [user,setUser] = useState({});
     const [isLoading,setIsLoading] = useState(true)
-<<<<<<< HEAD
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false);
 
-=======
-    const [authError,setAuthError] = useState('');
-   
-    
-   
-
-   
->>>>>>> c0c1f57baa4e113f1a72e26a42d5e5a061d26007
     const auth = getAuth(); 
     const siginWithGoogle = ( ) => {
         const googleProvider = new GoogleAuthProvider()
@@ -111,7 +102,6 @@ const useFirebase = () => {
                 setIsLoading(false)
             });
             return () => unsubscribed;
-<<<<<<< HEAD
         }, [])
     
     const saveUser = (email, method) => {
@@ -131,14 +121,6 @@ const useFirebase = () => {
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
-=======
-        },[])
-
-
-
-
-        
->>>>>>> c0c1f57baa4e113f1a72e26a42d5e5a061d26007
     return {
         user,
         registerUser,
@@ -147,11 +129,7 @@ const useFirebase = () => {
         logInUser,
         authError,
         siginWithGoogle,
-<<<<<<< HEAD
         admin
-=======
-       
->>>>>>> c0c1f57baa4e113f1a72e26a42d5e5a061d26007
         
     }
 
