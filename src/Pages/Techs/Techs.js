@@ -5,12 +5,13 @@ import { setGadgets } from "../../redux/actions/productsActions";
 const Techs = () => {
     const techs = useSelector((state) => state.gadgets.gadgets);
     const dispatch = useDispatch();
-
+   
     useEffect(() => {
         fetch('https://damp-gorge-65015.herokuapp.com/gadgets')
             .then(res => res.json())
             .then(data => {
                 dispatch(setGadgets(data));
+
             });
     }, [])
     return (

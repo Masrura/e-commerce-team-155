@@ -16,6 +16,7 @@ import MakeAdmin from './Pages/Admin/MakeAdmin/MakeAdmin';
 import Inventory from './Pages/Admin/Inventory/Inventory';
 import Cart from './Pages/Cart/Cart';
 
+
 function App() {
   return (
     <div className='App'> 
