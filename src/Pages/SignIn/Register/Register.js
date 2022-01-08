@@ -28,7 +28,10 @@ const Register = () => {
         newLoginData[field] = value;
         setLoginData(newLoginData);
       };
-
+  const handleGoogleSignIn = (e) => {
+    siginWithGoogle(location, navigate)
+    e.preventDefault()
+  }
     return (
         <>
         <Navigation></Navigation>
@@ -72,7 +75,7 @@ const Register = () => {
               <Typography variant="h4" sx={{m : 1}} gutterBottom component="div">
                   Or 
                 </Typography>
-                <Button onClick={siginWithGoogle} variant='contained' sx={{m : 4}} type='submit'><FontAwesomeIcon className='text-warning me-1' icon={faGoogle}/> SIGN IN WITH GOOGLE</Button><br/>
+              <Button onClick={handleGoogleSignIn} variant='contained' sx={{m : 4}} type='submit'><FontAwesomeIcon className='text-warning me-1' icon={faGoogle}/> SIGN IN WITH GOOGLE</Button><br/>
                 {
                   isLoading && <CircularProgress />
                 }

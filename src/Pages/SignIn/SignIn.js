@@ -24,7 +24,10 @@ const SignIn = () => {
         setLoginData(newLoginData);
       };
 
-
+  const handleGoogleSignIn = (e) => {
+    siginWithGoogle(location, navigate)
+    e.preventDefault()
+  }
     return (
         <>
         <Navigation></Navigation>
@@ -59,7 +62,7 @@ const SignIn = () => {
               <Typography variant="h4" sx={{m : 1}} gutterBottom component="div">
                   Or 
                 </Typography>
-                <Button onClick={siginWithGoogle} variant='contained' sx={{m : 4}} type='submit'><FontAwesomeIcon className='text-warning' icon={faGoogle}/>SIGN IN WITH GOOGLE</Button><br/>
+              <Button onClick={handleGoogleSignIn} variant='contained' sx={{m : 4}} type='submit'><FontAwesomeIcon className='text-warning' icon={faGoogle}/>SIGN IN WITH GOOGLE</Button><br/>
                 {
                   isLoading && <CircularProgress />
                 }
