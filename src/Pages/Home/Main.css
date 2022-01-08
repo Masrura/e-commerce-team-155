@@ -25,9 +25,9 @@
 
 .mini1{
     background-image: url(./../../images/banner-1.png);
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
-    
+    text-align: left;
     background-repeat: no-repeat;
 }
 
@@ -48,22 +48,16 @@
 }
 
 
-.w-45{
-    width: 100px;
-}
+
 
 
 
 .align-ele{
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    text-align: left;
-    padding: 20px;
+   
+    padding: 100px;
+}
+.align-ele2{
+   
+    padding: 200px;
 }
 
-
-.customFonts {
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Pacifico', cursive;
-}

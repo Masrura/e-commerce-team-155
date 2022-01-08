@@ -3,12 +3,12 @@ import axios from "axios";
 import Cloth from '../Cloth/Cloth';
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../../redux/actions/productsActions";
-
+import Ads from '../Ads/Ads';
 
 const Cloths = () => {
   const wears = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     fetch('https://damp-gorge-65015.herokuapp.com/shirts')
       .then(res => res.json())
@@ -33,10 +33,20 @@ const Cloths = () => {
     return (
         <>
         <section className="container-fluid mt-5 bg-cont" id="tisharts">
-               <h1 className="text-dark p-2 text-start">Popular Products</h1>
+              <h1 className="text-dark p-2 text-start">Popular Products</h1>
             <hr/>
-            <div className="row gy-5 p-5">
-                {wears.map(wear=><Cloth key={wear.id} wear={wear}></Cloth>)}           
+            <div className="row d-flex">
+                 <div className='col-lg-4'>
+                 <Ads></Ads> 
+
+                  </div>  
+                <div className='col-lg-8'>
+                    <div className='row'>
+                        {wears.map(wear=><Cloth key={wear.id} wear={wear}></Cloth>)}
+
+                    </div>
+                </div>           
+                       
             </div>
         </section>
         </>

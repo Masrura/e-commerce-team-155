@@ -15,8 +15,8 @@ const Home = () => {
             <Navigation></Navigation>
             <Main></Main>
             <Cloths></Cloths>
-            <Techs></Techs>
             <Foods></Foods>
+            <Techs></Techs>
             <Footer></Footer>
         </div>
     );

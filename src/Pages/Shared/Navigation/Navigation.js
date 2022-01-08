@@ -14,13 +14,13 @@ const Navigation = () => {
   const { user, logOut } = useAuth()
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg" className='navbg'>
         <Navbar.Brand href="#home">
           <img
             alt=""
             src={navbg}
-            width="300"
-            height="90"
+            width="250"
+            height="70"
             className="d-inline-block align-top"
           />
 
@@ -35,58 +35,63 @@ const Navigation = () => {
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          {
-            user?.email && <Nav className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <Nav.Link as={HashLink} to='/cart'>Cart<FontAwesomeIcon icon={faShoppingCart} /></Nav.Link>
-              <Nav.Link as={HashLink} to='/wishlist'>Wishlist<FontAwesomeIcon icon={faHeart} /></Nav.Link>
-              <Nav.Link as={HashLink} to='/my-orders'>Orders<FontAwesomeIcon icon={faDumpster} /></Nav.Link>
-            </Nav>
-          }
+          <Nav className="navbar-nav ms-auto">
+            {
+              user?.email && <>
+            <Nav.Link as={HashLink} to='/cart' className='text-light'>Cart<FontAwesomeIcon icon={faShoppingCart} /></Nav.Link>
+            <Nav.Link as={HashLink} to='/wishlist' className='text-light'>Wishlist<FontAwesomeIcon icon={faHeart} /></Nav.Link>
+                <Nav.Link as={HashLink} to='/my-orders'>Orders<FontAwesomeIcon icon={faDumpster} /></Nav.Link>
+                </>
+            }
 
-          <Nav>
             {
               user?.email ?
-                <li>
-                  <Button variant="contained" onClick={logOut} color="success">Log Out <FontAwesomeIcon icon={faArrowRight} /></Button>
+                <p>
+                  <Nav.Link as={HashLink} to='/Dashboard' className='text-light'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></Nav.Link>
+                  <Nav.Link as={HashLink} to='/Dashboard' onClick={logOut} className='text-light'>Log Out <FontAwesomeIcon icon={faArrowRight} /></Nav.Link>
+                </p>
 
-                  <Link to="/Dashboard"><button className='btn btn-danger me-1'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></button></Link></li>
+
                 :
-                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">
-                  <Button variant="contained" color="success"> <FontAwesomeIcon icon={faUser} /><span className='ms-2'>Log In</span></Button>
+                <Nav.Link as={HashLink} to='/login' className='text-light'>Log in<FontAwesomeIcon icon={faShoppingCart} /></Nav.Link>
 
-                </NavLink>
             }
           </Nav>
         </Navbar.Collapse>
       </Navbar>
 
+      {/* </NavLink>
+            }
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar> */}
 
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg" variant="light">
 
         <div className="dropdown">
-          <button className="dropbtn">Dropdown <FontAwesomeIcon icon={faQrcode} /></button>
+          <button className="dropbtn">Browse All Collection <FontAwesomeIcon icon={faQrcode} /></button>
           <div className="dropdown-content">
             <NavLink to='/wear'><p>Wear</p></NavLink>
             <NavLink to='/tech'><p>Tech</p></NavLink>
             <NavLink to='/food'><p>Food</p></NavLink>
           </div>
+
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="navbar-nav m-auto mb-2 mb-lg-0">
+              <Nav.Link as={HashLink} className='me-5' to='/home'>HOME</Nav.Link>
+              <Nav.Link as={HashLink} className='me-5' to='/wear'>WEAR</Nav.Link>
+              <Nav.Link as={HashLink} className='me-5' to='/tech'>TECH</Nav.Link>
+              <Nav.Link as={HashLink} className='me-5' to='/food'>FOOD</Nav.Link>
+              <Nav.Link as={HashLink} className='me-5' to='/contectus'>Contect Us</Nav.Link>
+
+            </Nav>
+            <Nav>
+
+            </Nav>
+          </Navbar.Collapse>
         </div>
-
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="navbar-nav m-auto mb-2 mb-lg-0">
-            <Nav.Link as={HashLink} className='me-5' to='/home'>HOME</Nav.Link>
-            <Nav.Link as={HashLink} className='me-5' to='/wear'>WEAR</Nav.Link>
-            <Nav.Link as={HashLink} className='me-5' to='/tech'>TECH</Nav.Link>
-            <Nav.Link as={HashLink} className='me-5' to='/food'>FOOD</Nav.Link>
-            <Nav.Link as={HashLink} className='me-5' to='/contectus'>Contect Us</Nav.Link>
-
-          </Nav>
-          <Nav>
-
-          </Nav>
-        </Navbar.Collapse>
       </Navbar>
     </>
   );
