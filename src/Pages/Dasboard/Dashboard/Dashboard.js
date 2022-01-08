@@ -49,6 +49,12 @@ function Dashboard(props) {
                 <Link to={`/dashboard/addproduct`}><a className='text-light'><FontAwesomeIcon icon={faStepForward}/> Add a product</a></Link><br/>
                 <Link to={`/home`}><a className='text-light'><FontAwesomeIcon icon={faStepForward}/> Home</a></Link><br/>
             </Box>}
+
+            {!admin && <Box className="navbar-nav mt-auto mb-2 mb-lg-0 shadow-lg" sx={{ backgroundColor: "#7258db", height: "100vh" }}>
+                <Link to={`/dashboard/dashboardhome`}><a className='text-light'><FontAwesomeIcon icon={faHouseUser} /> MyOrders</a></Link><br />
+                
+                
+            </Box>}
            
         </div>
     );

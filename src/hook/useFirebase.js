@@ -14,7 +14,7 @@ const useFirebase = () => {
     const [admin, setAdmin] = useState(false);
 
     const auth = getAuth(); 
-    const siginWithGoogle = ( ) => {
+    const siginWithGoogle = (location, navigate ) => {
         const googleProvider = new GoogleAuthProvider()
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
@@ -24,8 +24,12 @@ const useFirebase = () => {
           const token = credential.accessToken;
           // The signed-in user info.
             const user = result.user;
+            const destination = location?.state?.from || '/';
+            console.log('destination2', destination);
+            navigate(destination)
             setUser(user);
             saveUser(user.email, 'PUT');
+            
           // ...
         }).catch((error) => {
           // Handle Errors here.
@@ -47,6 +51,7 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth,email,password)
         .then((userCredential) => {
             const destination = location?.state?.from || '/';
+            console.log('destination2', destination);
             navigate(destination)
             setAuthError("");
             const newUser = {email: email}
@@ -66,6 +71,7 @@ const useFirebase = () => {
         .then((userCredential)=>{
             const destination = location?.state?.from || '/';
             navigate(destination)
+            console.log('destination2', destination);
             const newUser = { email: email }
             setUser(newUser);
             setAuthError("");

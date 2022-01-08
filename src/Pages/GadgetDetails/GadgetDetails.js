@@ -34,7 +34,7 @@ const GadgetDetails = () => {
     }, [gadgetId])
     const updateCart = (e) => {
         gadget.email = user.email;
-        fetch("http://localhost:5000/cart", {
+        fetch("http://damp-gorge-65015.herokuapp.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(gadget),
@@ -55,7 +55,7 @@ const GadgetDetails = () => {
     }
     const updateWishList = (e) => {
         gadget.email = user.email;
-        fetch("http://localhost:5000/wishlist", {
+        fetch("http://damp-gorge-65015.herokuapp.com/wishlist", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(gadget),

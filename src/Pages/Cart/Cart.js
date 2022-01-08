@@ -15,22 +15,30 @@ const Cart = () => {
     const cart = useSelector((state) => state.cart.cart);
     const dispatch = useDispatch();
     const { user } = useAuth();
-    let sum, delivery, total;
-    const calc = (product) => {
-        console.log('function called', product);
-        sum = 0;
-        delivery = 100;
-        total = 0;
-        product.map((pro) =>
-            sum = sum + (pro.quantity * pro.price)
-        )
-        total = sum + delivery
-        console.log('total', total, 'sum', sum);
+    //let totalQuantity = 0;
+    let total = 0;
+    let subtotal = 0;
+    for (const product of cart) {
+        total = total + product.price * product.quantity;
+        //totalQuantity = totalQuantity + product.quantity;
     }
+    subtotal = total + 100;
+    // let sum, delivery, total;
+    // const calc = (product) => {
+    //     console.log('function called', product);
+    //     sum = 0;
+    //     delivery = 100;
+    //     total = 0;
+    //     product.map((pro) =>
+    //         sum = sum + (pro.quantity * pro.price)
+    //     )
+    //     total = sum + delivery
+    //     console.log('total', total, 'sum', sum);
+    // }
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/deleteCart/${id}`, {
+            fetch(`http://damp-gorge-65015.herokuapp.com/deleteCart/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -38,7 +46,7 @@ const Cart = () => {
                 .then((data) => {
                     if (data.deletedCount) {
                         console.log('delete Successfull');
-                       // setControl(!control);
+                        setControl(!control);
                         this.render();
                         
                     } else {
@@ -50,12 +58,12 @@ const Cart = () => {
         }
     };
     useEffect(() => {
-        fetch(`http://localhost:5000/cart/${user.email}`)
+        fetch(`http://damp-gorge-65015.herokuapp.com/cart/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 dispatch(setCart(data));
             });
-        calc(cart);
+        // calc(cart);
     }, [user,control])
 
     
@@ -74,11 +82,11 @@ const Cart = () => {
 
                   <div className='col-lg-6'>
                         <div className='container mt-5'>
-                            {calc(cart)}
+                            {/* {calc(cart)} */}
                             <TextField
                                 id="sum"
                                 label="Subtotal"
-                                defaultValue={sum.toString()}
+                                defaultValue={total.toString()}
                                 sx={{ m: 3 }}
                                 InputProps={{
                                     readOnly: true,
@@ -105,7 +113,7 @@ const Cart = () => {
                             <TextField
                                 
                                 label="Total"
-                                defaultValue={total.toString()}
+                                defaultValue={subtotal.toString()}
                                 sx={{ m: 3 }}
                                 InputProps={{
                                     readOnly: true,

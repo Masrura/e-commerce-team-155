@@ -19,6 +19,7 @@ import DashboardHome from "./Pages/Dasboard/Dashboard/DashboardHome";
 import ContectUs from './Pages/ContectUs/ContectUs';
 import FoodsRoute from './Pages/FoodsRoute/FoodsRoute'
 import Wishlist from './Pages/Wishlist/Wishlist';
+import FoodDetails from './Pages/FoodsRoute/FoodDetails';
 
 
 function App() {
@@ -60,11 +61,12 @@ function App() {
             <Route path='/addProduct' element={<AddProduct />} />
             <Route path='/makeadmin' element={<MakeAdmin />} />
             <Route path='/inventory' element={<Inventory />} />
-            <Route path='/Wishlist' element={<Wishlist />} />
+            <Route path='/Wishlist' element={<PrivateRoute><Wishlist /></PrivateRoute>}/>
             <Route path='/contectus' element={<ContectUs/>} />
-            <Route path="/product/:productId" element={<ProductDetails />} />
-            <Route path="/gadget/:gadgetId" element={<GadgetDetails />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path="/product/:productId" element={<PrivateRoute><ProductDetails /></PrivateRoute>} />
+            <Route path="/gadget/:gadgetId" element={<PrivateRoute><GadgetDetails /></PrivateRoute>} />
+            <Route path="/food/:foodId" element={<PrivateRoute><FoodDetails /></PrivateRoute>} />
+            <Route path='/cart' element={<PrivateRoute><Cart/></PrivateRoute>} />
             <Route path='*' element={<ErrorPage />} />
             
             

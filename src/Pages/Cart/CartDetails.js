@@ -6,7 +6,7 @@ const CartDetails = ({ product, handleDelete}) => {
         <div className='col-lg-12 d-flex align-items-center border justify-content-between'>
                         <img className='w-25' src={product.image} alt=""/>
                         <p>	{product.name}</p>
-            <p>$ 1000</p>
+            <p>{product.price}</p>
             <p>Quantity: {product.quantity}</p>
             <Button style={{ color: 'white' }}
                 onClick={() => handleDelete(product._id)}
