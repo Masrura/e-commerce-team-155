@@ -16,7 +16,7 @@ const Techs = () => {
     }, [])
     return (
     <>
-        <section className="container-fluid mt-5 bg-cont text-center bg-light" id="tisharts">
+        <section className="container-fluid mt-5 text-center" id="tisharts">
             <h1 className="text-dark text-start p-2">Cheack Out Gedgets</h1>
             <hr/>
         <div className="row gy-5 p-5">
