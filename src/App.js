@@ -20,6 +20,8 @@ import ContectUs from './Pages/ContectUs/ContectUs';
 import FoodsRoute from './Pages/FoodsRoute/FoodsRoute'
 import Wishlist from './Pages/Wishlist/Wishlist';
 import FoodDetails from './Pages/FoodsRoute/FoodDetails'
+import Orders from './Pages/Orders/Orders';
+import MyOrders from './Pages/Orders/MyOrders';
 function App() {
   return (
     <div className='App'> 
@@ -64,7 +66,9 @@ function App() {
             <Route path="/product/:productId" element={<PrivateRoute><ProductDetails /></PrivateRoute>} />
             <Route path="/gadget/:gadgetId" element={<PrivateRoute><GadgetDetails /></PrivateRoute>} />
             <Route path="/food/:foodId" element={<PrivateRoute><FoodDetails /></PrivateRoute>} />
-            <Route path='/cart' element={<PrivateRoute><Cart/></PrivateRoute>} />
+            <Route path='/cart' element={<PrivateRoute><Cart /></PrivateRoute>} />
+            <Route path='/place-order' element={<PrivateRoute><Orders /></PrivateRoute>} />
+            <Route path='/my-orders' element={<PrivateRoute><MyOrders /></PrivateRoute>} />
             <Route path='*' element={<ErrorPage />} />
             
             
