@@ -12,6 +12,12 @@ export const setGadgets = (gadgets) => {
         payload: gadgets,
     };
 };
+export const setFoods = (foods) => {
+    return {
+        type: ActionTypes.SET_FOODS,
+        payload: foods,
+    };
+};
 
 export const selectedProduct = (product) => {
     return {
@@ -23,6 +29,12 @@ export const selectedGadget = (gadget) => {
     return {
         type: ActionTypes.SELECTED_GADGET,
         payload: gadget,
+    };
+};
+export const selectedFood = (food) => {
+    return {
+        type: ActionTypes.SELECTED_FOOD,
+        payload: food,
     };
 };
 

@@ -1,9 +1,10 @@
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Food = ({food}) => {
-  const {name,price,image} = food;
+  const {name,price,image,_id} = food;
   const myStyle = {
     height : "200px"
   }
@@ -15,7 +16,10 @@ const Food = ({food}) => {
             <div class="card-body">
               <h5 class="card-title">{name}</h5>
               <p>price:{price}</p>
+          <Link to={`/food/${_id}`}>
+
               <button type="button" className="btn btn-outline-success"><span className='me-2'>Shop Now</span> <FontAwesomeIcon icon={faShoppingBag} /> </button>
+          </Link>
             </div>
           </div>
         </div>

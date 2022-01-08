@@ -19,7 +19,7 @@ import DashboardHome from "./Pages/Dasboard/Dashboard/DashboardHome";
 import ContectUs from './Pages/ContectUs/ContectUs';
 import FoodsRoute from './Pages/FoodsRoute/FoodsRoute'
 import Wishlist from './Pages/Wishlist/Wishlist';
-
+import FoodDetails from "./Pages/FoodDetails/FoodDetails";
 function App() {
   return (
     <div className='App'> 
@@ -63,6 +63,7 @@ function App() {
             <Route path='/contectus' element={<ContectUs/>} />
             <Route path="/product/:productId" element={<ProductDetails />} />
             <Route path="/gadget/:gadgetId" element={<GadgetDetails />} />
+            <Route path="/food/:foodId" element={<FoodDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='*' element={<ErrorPage />} />
             

@@ -6,9 +6,10 @@ import Navigation from "./../Shared/Navigation/Navigation";
 import Foods from '../FoodsRoute/Foods';
 import useAuth from '../../hook/useAuth';
 import Footer from '../Shared/Navigation/Footer/Footer';
+
 const Home = () => {
     const { admin } = useAuth();
-    console.log('Admin is ', admin);
+   
     return (
         <div>
             <Navigation></Navigation>

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Pacifico&display=swap');
+
+
+
 .mainbg{
     background-image: url(./../../images/slider-3.png);
     padding: 152px;
@@ -56,4 +60,10 @@
     align-items: baseline;
     text-align: left;
     padding: 20px;
+}
+
+
+.customFonts {
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
 }

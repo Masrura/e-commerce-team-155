@@ -59,9 +59,9 @@ const Navigation = () => {
 
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown <FontAwesomeIcon icon={faQrcode}/></button>
-        <div class="dropdown-content">
+      <div className="dropdown">
+        <button className="dropbtn">Dropdown <FontAwesomeIcon icon={faQrcode}/></button>
+        <div className="dropdown-content">
           <NavLink to='/wear'><p>Wear</p></NavLink>
           <NavLink to='/tech'><p>Tech</p></NavLink>
           <NavLink to='/food'><p>Food</p></NavLink>
