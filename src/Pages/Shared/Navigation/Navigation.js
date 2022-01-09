@@ -36,14 +36,14 @@ const Navigation = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navbar-nav ms-auto">
-                     <Nav.Link as={HashLink} to='/cart' className='text-light'>Cart<FontAwesomeIcon icon={faShoppingCart}/></Nav.Link>
-                      <Nav.Link as={HashLink} to='/wishlist' className='text-light'>Wishlist<FontAwesomeIcon icon={faHeart}/></Nav.Link>
+                     <Nav.Link as={HashLink} to='/cart' className='text-dark'>Cart<FontAwesomeIcon icon={faShoppingCart}/></Nav.Link>
+                      <Nav.Link as={HashLink} to='/wishlist' className='text-dark'>Wishlist<FontAwesomeIcon icon={faHeart}/></Nav.Link>
         
           {
                         user?.email ?
                             <p>
-                               <Nav.Link as={HashLink} to='/Dashboard' className='text-light'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></Nav.Link>
-                              <Nav.Link as={HashLink} to='/Dashboard' onClick={logOut} className='text-light'>Log Out <FontAwesomeIcon icon={faArrowRight}/></Nav.Link>
+                               <Nav.Link as={HashLink} to='/Dashboard' className='text-dark'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></Nav.Link>
+                              <Nav.Link as={HashLink} to='/Dashboard' onClick={logOut} className='text-dark'>Log Out <FontAwesomeIcon icon={faArrowRight}/></Nav.Link>
                             </p>
 
 
@@ -61,9 +61,9 @@ const Navigation = () => {
       <div className="dropdown">
         <button className="dropbtn">Browse All Collection <FontAwesomeIcon icon={faQrcode}/></button>
         <div className="dropdown-content">
-          <NavLink to='/wear'><p>Wear</p></NavLink>
-          <NavLink to='/tech'><p>Tech</p></NavLink>
-          <NavLink to='/food'><p>Food</p></NavLink>
+          <NavLink to='/wear'><p className="font-weight-bold">Wear</p></NavLink>
+          <NavLink to='/tech'><p className="font-weight-bold">Tech</p></NavLink>
+          <NavLink to='/food'><p className="font-weight-bold">Food</p></NavLink>
         </div>
     </div>
 
@@ -71,11 +71,11 @@ const Navigation = () => {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navbar-nav m-auto mb-2 mb-lg-0">
-          <Nav.Link as={HashLink} className='me-5' to='/home'>HOME</Nav.Link>
-          <Nav.Link as={HashLink} className='me-5' to='/wear'>WEAR</Nav.Link>
-          <Nav.Link as={HashLink} className='me-5' to='/tech'>TECH</Nav.Link>
-          <Nav.Link as={HashLink} className='me-5' to='/food'>FOOD</Nav.Link>
-          <Nav.Link as={HashLink} className='me-5' to='/contectus'>Contect Us</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5 font-weight-bold text-dark' to='/home'>HOME</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5 font-weight-bold text-dark' to='/wear'>WEAR</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5 font-weight-bold text-dark' to='/tech'>TECH</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5 font-weight-bold text-dark' to='/food'>FOOD</Nav.Link>
+          <Nav.Link as={HashLink} className='me-5 font-weight-bold text-dark' to='/contectus'>Contect Us</Nav.Link>
           
         </Nav>
         <Nav>
