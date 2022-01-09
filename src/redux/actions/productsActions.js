@@ -30,12 +30,7 @@ export const selectedGadget = (gadget) => {
         payload: gadget,
     };
 };
-export const selectedFood = (food) => {
-    return {
-        type: ActionTypes.SELECTED_FOOD,
-        payload: food,
-    };
-};
+
 
 export const removeSelectedProduct = () => {
     return {
