@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 import './Navigation.css'
 
 const Navigation = () => {
-  const { user, logOut } = useAuth()
+  const { user, logOut, admin } = useAuth()
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className='navbg'>
@@ -42,7 +42,7 @@ const Navigation = () => {
             {
               user?.email ?
                 <p>
-                  <Nav.Link as={HashLink} to='/Dashboard' className='text-light font-weight-bold'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></Nav.Link>
+                  {admin&&<Nav.Link as={HashLink} to='/Dashboard' className='text-light font-weight-bold'>Dashboard <FontAwesomeIcon icon={faSignInAlt} /></Nav.Link>}
                   <Nav.Link as={HashLink} to='/Dashboard' onClick={logOut} className='text-light font-weight-bold'>Log Out <FontAwesomeIcon icon={faArrowRight} /></Nav.Link>
                 </p>
 
