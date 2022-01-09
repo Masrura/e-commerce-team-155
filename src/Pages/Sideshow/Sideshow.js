@@ -19,7 +19,7 @@ const Sideshow = () => {
                         <p>{ c.name}</p>
 
                         <p>{c.price}</p>
-                        <button class="dropbtn">Details <FontAwesomeIcon icon={faQrcode} /></button>
+                        <button className="dropbtn w-25"> <FontAwesomeIcon icon={faQrcode} /></button>
                     </div>
                     )
                 
