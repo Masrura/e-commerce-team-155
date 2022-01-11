@@ -30,7 +30,7 @@ const Orders = (props) => {
     }
     const placeOrder = () => {
 
-        fetch("http://damp-gorge-65015.herokuapp.com/order", {
+        fetch("https://damp-gorge-65015.herokuapp.com/order", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(order),

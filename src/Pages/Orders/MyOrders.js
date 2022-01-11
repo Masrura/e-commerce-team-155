@@ -12,7 +12,7 @@ const MyOrders = () => {
     const handleShow = () => setShow(true);
     const { user } = useAuth();
     useEffect(() => {
-        fetch(`http://damp-gorge-65015.herokuapp.com/order/${user.email}`)
+        fetch(`https://damp-gorge-65015.herokuapp.com/order/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])

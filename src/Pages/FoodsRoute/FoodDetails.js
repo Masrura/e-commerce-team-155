@@ -13,13 +13,13 @@ const FoodDetails = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://damp-gorge-65015.herokuapp.com/food/${foodId}`)
+        fetch(`https://damp-gorge-65015.herokuapp.com/food/${foodId}`)
             .then(res => res.json())
             .then(data => setFood(data))
     }, [foodId]);
     const updateCart = (e) => {
         food.email = user.email;
-        fetch("http://damp-gorge-65015.herokuapp.com/cart", {
+        fetch("https://damp-gorge-65015.herokuapp.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(food),
@@ -41,7 +41,7 @@ const FoodDetails = () => {
     }
     const updateWishList = (e) => {
         food.email = user.email;
-        fetch("http://damp-gorge-65015.herokuapp.com/wishlist", {
+        fetch("https://damp-gorge-65015.herokuapp.com/wishlist", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(food),

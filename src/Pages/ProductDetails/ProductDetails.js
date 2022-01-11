@@ -38,7 +38,7 @@ const ProductDetails = () => {
 
     const updateCart = (e) => {
         product.email = user.email;
-        fetch("http://damp-gorge-65015.herokuapp.com/cart", {
+        fetch("https://damp-gorge-65015.herokuapp.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(product),
@@ -60,7 +60,7 @@ const ProductDetails = () => {
     }
     const updateWishList = (e) => {
         product.email = user.email;
-        fetch("http://damp-gorge-65015.herokuapp.com/wishlist", {
+        fetch("https://damp-gorge-65015.herokuapp.com/wishlist", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(product),
