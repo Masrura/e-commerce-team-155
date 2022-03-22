@@ -9,7 +9,7 @@ const Inventory = () => {
         height: "200px"
     }
     useEffect(() => {
-        fetch('https://damp-gorge-65015.herokuapp.com/inventory')
+        fetch('https://afternoon-sands-62770.herokuapp.com/inventory')
         .then(res => res.json())
         .then(data =>setInventory(data))
     }, [control])
@@ -17,7 +17,7 @@ const Inventory = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`https://damp-gorge-65015.herokuapp.com/deleteProduct/${id}`, {
+            fetch(`https://afternoon-sands-62770.herokuapp.com/deleteProduct/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

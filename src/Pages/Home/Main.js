@@ -19,7 +19,7 @@ const Main = () => {
             <div className="row d-flex">
                 <Grid className="col-lg-12 mainbg">
                         <Grid>
-                            <h2 className="display-1" style={maintext}><span className="text-danger">Pure</span> Coffe </h2>
+                            <h2 className="display-1" style={maintext}><span className="text-danger">Pure</span> Coffee </h2>
                             <h2 className="display-5" style={maintext}><span className="text-danger">Big</span> Discount </h2>
                             <Button variant="contained" color="success">Shop Now <FontAwesomeIcon icon={faArrowRight}/></Button>
                         </Grid>

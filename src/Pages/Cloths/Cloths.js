@@ -10,7 +10,7 @@ const Cloths = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    fetch('https://damp-gorge-65015.herokuapp.com/shirts')
+    fetch('https://afternoon-sands-62770.herokuapp.com/shirts')
       .then(res => res.json())
       .then(data => {
         dispatch(setProducts(data));

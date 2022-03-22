@@ -7,7 +7,7 @@ const Techs = () => {
     const dispatch = useDispatch();
    
     useEffect(() => {
-        fetch('https://damp-gorge-65015.herokuapp.com/gadgets')
+        fetch('https://afternoon-sands-62770.herokuapp.com/gadgets')
             .then(res => res.json())
             .then(data => {
                 dispatch(setGadgets(data));

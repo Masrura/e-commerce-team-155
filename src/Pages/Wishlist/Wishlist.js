@@ -10,14 +10,14 @@ const Wishlist = () => {
     const [control, setControl] = useState(0);
     const { user } = useAuth();
     useEffect(() => {
-        fetch(`https://damp-gorge-65015.herokuapp.com/wishlist/${user.email}`)
+        fetch(`https://afternoon-sands-62770.herokuapp.com/wishlist/${user.email}`)
             .then(res => res.json())
             .then(data => setWishlist(data))
     }, [control])
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`https://damp-gorge-65015.herokuapp.com/delete-wishlist/${id}`, {
+            fetch(`https://afternoon-sands-62770.herokuapp.com/delete-wishlist/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
