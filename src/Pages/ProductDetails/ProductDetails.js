@@ -21,7 +21,7 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (productId && productId !== "") {
-            fetch(`https://afternoon-sands-62770.herokuapp.com/shirt/${productId}`)
+            fetch(`https://e-commerce-site-9crn.onrender.com/shirt/${productId}`)
                 .then(res => res.json())
                 .then(data => {
                     dispatch(selectedProduct(data));
@@ -38,7 +38,7 @@ const ProductDetails = () => {
 
     const updateCart = (e) => {
         product.email = user.email;
-        fetch("https://afternoon-sands-62770.herokuapp.com/cart", {
+        fetch("https://e-commerce-site-9crn.onrender.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(product),
@@ -60,7 +60,7 @@ const ProductDetails = () => {
     }
     const updateWishList = (e) => {
         product.email = user.email;
-        fetch("https://afternoon-sands-62770.herokuapp.com/wishlist", {
+        fetch("https://e-commerce-site-9crn.onrender.com/wishlist", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(product),

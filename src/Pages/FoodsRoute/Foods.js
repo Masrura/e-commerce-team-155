@@ -5,7 +5,7 @@ const Foods = () => {
     const [foods,setFoods] = useState([]);
 
     useEffect(()=>{
-        fetch('https://afternoon-sands-62770.herokuapp.com/foods')
+        fetch('https://e-commerce-site-9crn.onrender.com/foods')
         .then(res=>res.json())
         .then(data=>setFoods(data))
     },[])

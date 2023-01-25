@@ -13,13 +13,13 @@ const FoodDetails = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`https://afternoon-sands-62770.herokuapp.com//food/${foodId}`)
+        fetch(`https://e-commerce-site-9crn.onrender.com/food/${foodId}`)
             .then(res => res.json())
             .then(data => setFood(data))
     }, [foodId]);
     const updateCart = (e) => {
         food.email = user.email;
-        fetch("https://afternoon-sands-62770.herokuapp.com/cart", {
+        fetch("https://e-commerce-site-9crn.onrender.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(food),
@@ -41,7 +41,7 @@ const FoodDetails = () => {
     }
     const updateWishList = (e) => {
         food.email = user.email;
-        fetch("https://afternoon-sands-62770.herokuapp.com/wishlist", {
+        fetch("https://e-commerce-site-9crn.onrender.com/wishlist", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(food),

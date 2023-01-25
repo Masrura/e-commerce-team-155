@@ -112,7 +112,7 @@ const useFirebase = () => {
     
     const saveUser = (email, method) => {
         const user = {email};
-        fetch('https://afternoon-sands-62770.herokuapp.com/users', {
+        fetch('https://e-commerce-site-9crn.onrender.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -123,7 +123,7 @@ const useFirebase = () => {
             .then(data => console.log(data))
     }
     useEffect(() => {
-        fetch(`https://afternoon-sands-62770.herokuapp.com/users/${user.email}`)
+        fetch(`https://e-commerce-site-9crn.onrender.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])

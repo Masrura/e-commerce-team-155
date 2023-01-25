@@ -19,7 +19,7 @@ const Cart = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            fetch(`https://afternoon-sands-62770.herokuapp.com/deleteCart/${id}`, {
+            fetch(`https://e-commerce-site-9crn.onrender.com/deleteCart/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })
@@ -37,7 +37,7 @@ const Cart = () => {
         }
     };
     useEffect(() => {
-        fetch(`https://afternoon-sands-62770.herokuapp.com/cart/${user.email}`)
+        fetch(`https://e-commerce-site-9crn.onrender.com/cart/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 dispatch(setCart(data));

@@ -10,7 +10,7 @@ const Cloths = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    fetch('https://afternoon-sands-62770.herokuapp.com/shirts')
+    fetch('https://e-commerce-site-9crn.onrender.com/shirts')
       .then(res => res.json())
       .then(data => {
         dispatch(setProducts(data));

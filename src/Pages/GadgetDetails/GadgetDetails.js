@@ -21,7 +21,7 @@ const GadgetDetails = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         if (gadgetId && gadgetId !== "") {
-            fetch(`https://afternoon-sands-62770.herokuapp.com/gadget/${gadgetId}`)
+            fetch(`https://e-commerce-site-9crn.onrender.com/gadget/${gadgetId}`)
                 .then(res => res.json())
                 .then(data => {
                     dispatch(selectedGadget(data));
@@ -34,7 +34,7 @@ const GadgetDetails = () => {
     }, [gadgetId])
     const updateCart = (e) => {
         gadget.email = user.email;
-        fetch("https://afternoon-sands-62770.herokuapp.com/cart", {
+        fetch("https://e-commerce-site-9crn.onrender.com/cart", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(gadget),
@@ -55,7 +55,7 @@ const GadgetDetails = () => {
     }
     const updateWishList = (e) => {
         gadget.email = user.email;
-        fetch("https://afternoon-sands-62770.herokuapp.com/wishlist", {
+        fetch("https://e-commerce-site-9crn.onrender.com/wishlist", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(gadget),

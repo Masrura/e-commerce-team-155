@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 const Sideshow = () => {
     const [product,setProduct] = useState([]);
     useEffect(()=>{
-        fetch('https://afternoon-sands-62770.herokuapp.com/inventory')
+        fetch('https://e-commerce-site-9crn.onrender.com/inventory')
         .then(res=>res.json())
         .then(data=>setProduct(data))
     },[])
